@@ -48,23 +48,26 @@ export const PaymentMethods = () => {
         {/* Payment Methods */}
         <div className="text-center">
           <p className="text-muted-foreground mb-8 text-lg">
-            Accepted worldwide payment methods
+            Accepted payment methods
           </p>
-          <div className="flex justify-center gap-6 flex-wrap">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 max-w-5xl mx-auto">
             {[
-              { name: "Visa", gradient: "from-[#1A1F71] to-[#0E1451]" },
-              { name: "Mastercard", gradient: "from-[#EB001B] to-[#FF5F00]" },
-              { name: "American Express", gradient: "from-[#006FCF] to-[#00478F]" },
-              { name: "PayPal", gradient: "from-[#003087] to-[#009CDE]" },
-              { name: "Apple Pay", gradient: "from-[#000000] to-[#1A1A1A]" },
-              { name: "Google Pay", gradient: "from-[#4285F4] to-[#34A853]" },
+              { name: "bKash", gradient: "from-[#E2136E] to-[#C91159]", local: true },
+              { name: "Nagad", gradient: "from-[#EE4023] to-[#D63518]", local: true },
+              { name: "Rocket", gradient: "from-[#8B3A9F] to-[#6B2A7F]", local: true },
+              { name: "Bank Transfer", gradient: "from-[#1E40AF] to-[#1E3A8A]", local: true },
+              { name: "Visa", gradient: "from-[#1A1F71] to-[#0E1451]", local: false },
+              { name: "Mastercard", gradient: "from-[#EB001B] to-[#FF5F00]", local: false },
+              { name: "PayPal", gradient: "from-[#003087] to-[#009CDE]", local: false },
+              { name: "Apple Pay", gradient: "from-[#000000] to-[#1A1A1A]", local: false },
+              { name: "Google Pay", gradient: "from-[#4285F4] to-[#34A853]", local: false },
             ].map((method, index) => (
               <div
                 key={method.name}
-                className={`bg-gradient-to-br ${method.gradient} px-8 py-4 rounded-xl text-white font-bold shadow-lg hover:scale-110 transition-all duration-300 animate-float`}
-                style={{ animationDelay: `${index * 0.2}s` }}
+                className={`bg-gradient-to-br ${method.gradient} px-6 py-5 rounded-2xl text-white font-bold shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 animate-fade-in text-center ${method.local ? 'border-2 border-white/20' : ''}`}
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {method.name}
+                <span className="text-sm md:text-base">{method.name}</span>
               </div>
             ))}
           </div>

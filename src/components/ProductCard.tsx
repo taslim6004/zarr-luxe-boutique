@@ -76,9 +76,12 @@ export const ProductCard = ({ name, price, image, description, index }: ProductC
         <div className="flex items-center justify-between">
           <div>
             <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Price</p>
-            <span className="font-playfair text-3xl font-bold bg-gradient-to-r from-accent via-accent to-primary bg-clip-text text-transparent">
-              {price}
-            </span>
+            <div className="flex items-baseline gap-1">
+              <span className="font-playfair text-3xl font-bold bg-gradient-to-r from-accent via-accent to-primary bg-clip-text text-transparent">
+                {price}
+              </span>
+              <span className="text-sm font-semibold text-muted-foreground">BDT</span>
+            </div>
           </div>
         </div>
       </div>
