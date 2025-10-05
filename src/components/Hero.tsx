@@ -1,22 +1,18 @@
 import { ChevronRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Scene3D } from "./Scene3D";
 
 export const Hero = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* 3D Background Layer */}
-      <div className="absolute inset-0 z-0">
-        <Scene3D />
-      </div>
+      {/* Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-accent/10"></div>
       
-      {/* Premium Gradient Overlay */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background"></div>
+      {/* Animated Gradient Orbs */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/30 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 right-1/3 w-80 h-80 bg-primary/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
       </div>
-
-      {/* Premium Glass Morphism Overlay */}
-      <div className="absolute inset-0 z-0 backdrop-blur-[2px]"></div>
 
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 backdrop-blur-xl border border-primary/20 mb-8 animate-fade-in">
