@@ -1,43 +1,60 @@
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Scene3D } from "./Scene3D";
 import heroImage from "@/assets/hero-bg.jpg";
 
 export const Hero = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 z-0 animate-parallax-slow">
+      {/* 3D Background Layer */}
+      <div className="absolute inset-0 z-0">
+        <Scene3D />
+      </div>
+      
+      {/* Image Layer with Blend */}
+      <div className="absolute inset-0 z-0 animate-parallax-slow opacity-30">
         <img
           src={heroImage}
-          alt="ZARR Luxury Fashion - Heritage meets modern elegance"
+          alt="ZARR - Where Luxury Meets Innovation"
           className="w-full h-full object-cover animate-tilt-3d"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background"></div>
       </div>
 
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        <h2 className="font-playfair text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 animate-fade-in-up leading-tight">
-          স্টাইলে রাজত্ব করুন
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mt-2">
-            Reign in Style
+      {/* Premium Glass Morphism Overlay */}
+      <div className="absolute inset-0 z-0 backdrop-blur-[2px]"></div>
+
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 backdrop-blur-xl border border-primary/20 mb-8 animate-fade-in">
+          <Sparkles className="w-4 h-4 text-accent" />
+          <span className="text-sm font-medium text-foreground">Premium Collection 2025</span>
+        </div>
+        
+        <h2 className="font-playfair text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-bold text-foreground mb-6 animate-fade-in-up leading-[1.1] tracking-tight">
+          Luxury
+          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary mt-2 animate-shimmer bg-[length:200%_auto]">
+            Redefined
           </span>
         </h2>
-        <p className="text-xl sm:text-2xl text-muted-foreground mb-8 animate-fade-in-up max-w-2xl mx-auto" style={{ animationDelay: "0.2s" }}>
-          Where Bangladesh's rich heritage meets contemporary luxury. Each piece tells a story of craftsmanship, culture, and timeless elegance.
+        
+        <p className="text-xl sm:text-2xl md:text-3xl text-muted-foreground mb-10 animate-fade-in-up max-w-3xl mx-auto font-light leading-relaxed" style={{ animationDelay: "0.2s" }}>
+          Experience unparalleled craftsmanship. Every piece is a masterpiece, meticulously designed for those who demand excellence.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+        
+        <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
           <Button
             size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg px-8 py-6 group transition-all hover:scale-105 animate-glow-pulse"
+            className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground font-semibold text-lg px-10 py-7 group transition-all hover:scale-105 hover:shadow-[var(--shadow-glow)] rounded-xl"
           >
-            Own the Look
-            <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+            Explore Collection
+            <ChevronRight className="ml-2 group-hover:translate-x-2 transition-transform" />
           </Button>
           <Button
             size="lg"
             variant="outline"
-            className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-semibold text-lg px-8 py-6 transition-all hover:scale-105"
+            className="border-2 border-accent/50 backdrop-blur-xl bg-background/30 text-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent font-semibold text-lg px-10 py-7 transition-all hover:scale-105 rounded-xl"
           >
-            Shop the Drop
+            View Lookbook
           </Button>
         </div>
       </div>
