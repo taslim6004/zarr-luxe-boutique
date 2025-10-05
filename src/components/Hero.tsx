@@ -1,7 +1,6 @@
 import { ChevronRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Scene3D } from "./Scene3D";
-import heroImage from "@/assets/hero-bg.jpg";
 
 export const Hero = () => {
   return (
@@ -11,13 +10,8 @@ export const Hero = () => {
         <Scene3D />
       </div>
       
-      {/* Image Layer with Blend */}
-      <div className="absolute inset-0 z-0 animate-parallax-slow opacity-30">
-        <img
-          src={heroImage}
-          alt="ZARR - Where Luxury Meets Innovation"
-          className="w-full h-full object-cover animate-tilt-3d"
-        />
+      {/* Premium Gradient Overlay */}
+      <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background"></div>
       </div>
 
